@@ -1,0 +1,351 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content="Futekov family website, Radi Futekov, Alexandra Futekova, Stefan Futekov and Alexander Futekov" />
+    <title>Семейство Футекови</title>
+    <style type="text/css">
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #fff;
+}
+h1 {
+  text-align: center;
+  font: 400 50px/1.2 sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  padding: 0.2em 0;
+  color: #555;
+}
+@media only screen and (max-width: 1060px) {
+  h1 {
+    font-size: 36px;
+  }
+}
+@media only screen and (max-width: 800px) {
+  h1 {
+    font-size: 28px;
+  }
+}
+h2 {
+  font-size: 1em;
+  font-weight: normal;
+  line-height: 1.2;
+  word-spacing: 20em;
+  margin-bottom: 0.3em;
+}
+h2:first-line {
+  font-weight: 700;
+}
+h3 {
+  font-size: 0.6em;
+  text-transform: uppercase;
+  opacity: 0.5;
+}
+.tree {
+  text-align: center;
+  font-size: 18px;
+}
+@media only screen and (max-width: 1270px) {
+  .tree {
+    font-size: 17px;
+  }
+}
+@media only screen and (max-width: 960px) {
+  .tree {
+    font-size: 15px;
+  }
+}
+@media only screen and (max-width: 850px) {
+  .tree {
+    font-size: 14px;
+  }
+}
+.tree > ul {
+  display: inline-block;
+  margin-top: 1em !important;
+}
+
+.tree > ul > li {
+  margin-left: -12.5em;
+}
+
+.tree li > ul {
+  left: 6.2em;
+}
+
+
+.tree ul {
+  margin-top: 3em;
+  position: relative;
+  transition: all 0.5s;
+}
+.tree ul ul::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  top: -5.8em;
+  left: 50%;
+  width: 0;
+  height: 5.8em;
+  border-left: 1px solid #ccc;
+}
+.tree li {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  white-space: nowrap;
+  list-style-type: none;
+  margin: 0;
+  padding: 1em 0.2em 0;
+  transition: all 0.5s;
+}
+.tree li::before,
+.tree li::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 50%;
+  border-top: 1px solid #ccc;
+  width: 52%;
+  height: 1em;
+}
+.tree li::after {
+  right: auto;
+  left: 50%;
+  border-left: 1px solid #ccc;
+}
+.tree li:only-child {
+  padding-top: 0;
+  float: none;
+}
+.tree li:nth-child(1):nth-last-child(2) {
+  left: -6.2em;
+}
+.tree li:nth-child(2) {
+  right: -5.8em;
+  position: absolute;
+}
+
+.tree li:only-child::after,
+.tree li:only-child::before {
+  display: none;
+}
+.tree li:first-child::before,
+.tree li:last-child::after {
+  border: 0 none;
+}
+.tree li:last-child::before {
+  border-right: 1px solid #ccc;
+}
+.tree li .person {
+  width: 10em;
+  position: relative;
+  padding: 0.4em 0.6em;
+  text-decoration: none;
+  white-space: normal;
+  color: #000;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 1em;
+  display: inline-block;
+  transition: all 0.5s;
+  cursor: default;
+  background: #ebebeb;
+  border: 1px solid #bbb;
+}
+
+.tree li:nth-child(1):nth-last-child(2) > ul {
+  left: -6.2em;
+}
+
+.tree li .person:hover ~ ul li::after,
+.tree li .person:focus ~ ul li::after,
+.tree li .person:hover ~ ul li::before,
+.tree li .person:focus ~ ul li::before,
+.tree li .person:hover ~ ul::before,
+.tree li .person:focus ~ ul::before,
+.tree li .person:hover ~ ul ul::before,
+.tree li .person:focus ~ ul ul::before {
+  border-color: #c5c5c5;
+}
+.tree li .person:hover,
+.tree li .person:focus,
+.tree li .person:hover ~ ul li .person:first-of-type,
+.tree li .person:focus ~ ul li .person:first-of-type {
+  background: #d6d6d6;
+  color: #000;
+  outline: none;
+}
+.tree li .person:hover + .person::before,
+.tree li .person:focus + .person::before,
+.tree li .person:hover:before,
+.tree li .person:focus:before {
+  color: #e60000 !important;
+}
+
+.tree li .person:nth-child(2):nth-last-of-type(1) {
+  margin-left: 0.6em;
+  margin-right: 0.6em;
+}
+
+.tree li .person:nth-child(1):nth-last-of-type(2) {
+  margin-left: 0.6em;
+  margin-right: 0.6em;
+}
+.tree li .person + .person {
+  position: absolute;
+}
+.tree li .person + .person:before {
+  content: '♥';
+  color: #ccc;
+  font-size: 1.9em;
+  position: absolute;
+  display: block;
+  left: -23px;
+  top: 0;
+  transition: color 0.5s;
+}
+.tree li .person a {
+  display: block;
+  position: absolute;
+  font-size: 0.7em;
+  text-decoration: none;
+  left: 25%;
+  width: 50%;
+  bottom: -1.8em;
+  background: #d5dcff;
+  border: 1px solid #b4c5ff;
+  line-height: 1.6;
+  color: #3d6588;
+  opacity: 0.5;
+  transition: opacity 0.5s
+}
+.tree li .person:focus a,
+.tree li .person:hover a,
+.tree li .person a:focus,
+.tree li .person a:hover {
+  opacity: 1;
+}
+.tree li:nth-last-of-type(2) > .person + .person {
+  right: 100%;
+  margin-right: 6px !important;
+}
+.tree li:nth-last-of-type(2) > .person + .person:before {
+  left: auto;
+  right: -23px;
+}
+.tree ul:after {
+  opacity: 0;
+}
+.tree .person ~ ul:after,
+.tree .person ~ ul > li > ul:after {
+  content: "";
+  position: absolute;
+  top: -24px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  background: rgba(255,255,255,0.4);
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+.tree .person:hover ~ ul:after,
+.tree .person:focus ~ ul:after {
+  content: "деца:";
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+.tree .person:hover ~ ul > li > ul:after,
+.tree .person:focus ~ ul > li > ul:after {
+  content: "внуци:";
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+.tree .person:hover ~ ul:after,
+.tree .person:focus ~ ul:after,
+.tree .person:hover ~ ul > li > ul:after,
+.tree .person:focus ~ ul > li > ul:after {
+  opacity: 1;
+}
+    </style>
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-24406034-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+  </head>
+  <body>
+    <h1>Семейство Футекови</h1>
+    <div class="tree">
+      <ul>
+        <li>
+          <div class="person" tabindex="0">
+            <h2>Ради Футеков</h2>
+            <h3>Radi Futekov</h3>
+          </div>
+          <div class="person" tabindex="0">
+            <h2>Александра Футекова</h2>
+            <h3>Alexandra Futekova</h3>
+          </div>
+          <ul>
+            <li>
+              <div class="person" tabindex="0">
+                <h2>Стефан Футеков</h2>
+                <h3>Stefan Futekov</h3>
+                <a href="http://www.facebook.com/stefan.futekov">Facebook</a>
+              </div>
+              <div class="person" tabindex="0">
+                <h2>Снежина Футекова</h2>
+                <h3>Snejina Futekova</h3>
+              </div>
+              <ul>
+                <li>
+                  <div class="person" tabindex="0">
+                    <h2>Алина Футекова</h2>
+                    <h3>Alina Futekova</h3>
+                  </div>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <div class="person" tabindex="0">
+                <h2>Александър Футеков</h2>
+                <h3>Alexander Futekov</h3>
+                <a href="/alexander">лична страница</a>
+              </div>
+              <div class="person" tabindex="0">
+                <h2>Светла Кокалова-Футекова</h2>
+                <h3>Svetla Kokalova-Futekova</h3>
+                <a href="http://aurelias-kitchen.com/">кулинарен блог</a>
+              </div>
+              <ul>
+                <li>
+                  <div class="person" tabindex="0">
+                    <h2>Адриана Футекова</h2>
+                    <h3>Adriana Futekova</h3>
+                  </div>
+                </li>
+                <li>
+                  <div class="person" tabindex="0">
+                    <h2>Дария Футекова</h2>
+                    <h3>Daria Futekova</h3>
+                  </div>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

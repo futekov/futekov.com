@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="A web developer and a Bulgarian optimist.">
+  <meta name="keywords" content="Александър Футеков, Футеков, Alexander Futekov, Futekov">
+  <meta name="author" content="Alexander Futekov">
+  <meta name="viewport" content="width=device-width">
+  <title>Alexander Futekov</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style type="text/css">
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+  overflow: hidden;
+  background: #afafaf;
+  border-left: 3px solid #004b87;
+  border-right: 2px solid #ffcd00;
+}
+
+body {
+  margin: 0;
+  height: 100%;
+  overflow-y: scroll;
+  background-color: #fff;
+  font: 21px/1.4 sans-serif;
+  perspective: 80vh;
+  transform-style: preserve-3d;
+}
+
+@media not (prefers-reduced-motion) {
+  body {
+    perspective: 80vh;
+    transform-style: preserve-3d;
+  }
+}
+
+main {
+  position: relative;
+  overflow: hidden;
+}
+
+main:before {
+  content: "";
+  box-shadow: 2px 2px 5px;
+  background: conic-gradient(from 45deg, hsl(0deg 0% 37%) 0% 25%, hsl(0deg 0% 34%) 0% 50%, hsl(4 0% 41% / 1) 0% 75%, hsl(4 0% 58% / 1) 0%) 50%/ 20px 20px;
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0.4;
+}
+
+header, section, aside {
+  max-width: 56.5ch;
+  margin: 20px auto;
+  padding: 0 1.5rem 1.5rem;
+  background: #e7e7e7;
+}
+
+header {
+  background: none;
+}
+
+header img {
+  display: block;
+  margin: 5px auto;
+}
+
+section:last-of-type {
+  margin-bottom: 40vh;
+}
+section:last-of-type a {
+  display: block;
+  font-size: 1.2em;
+  text-align: center;
+}
+  
+h1, h2, h3 {
+  text-align: center;
+}
+
+h1, h2 {
+  position: relative;
+  background: transparent;
+  border: solid;
+  border-width: 2px 0;
+  color: #171717;
+  line-height: 2em;
+  margin: 0 -1.5rem 0.4em;
+  transform-style: preserve-3d;
+  transform: translateZ(50px);
+}
+
+h1 {
+  margin-top: -1.5rem;
+}
+
+h1 > span:before { 
+  content: "\00b4";
+  position: absolute;
+  animation: slide-fade 2s 0.5s 1 both;
+  pointer-events: none;
+}
+@keyframes slide-fade {
+  0% {
+    transform: translateX(0.5em) translateY(-0.2em);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0.15em) translateY(0);
+    opacity: 1;
+  }
+}
+
+h2 {
+  font-weight: 400;
+}
+
+h1::before,
+h1::after,
+h2::before,
+h2::after {
+  content: "";
+  position: absolute;
+  width: 50px;
+  top: -2px;
+  bottom: -2px;
+  background: transparent;
+  border-color: #171717;
+  border-style: solid;
+  border-width: 2px;
+}
+h1::before,
+h2::before {
+  left: -50px;
+  transform-origin: 100% 0%;
+  transform: rotateY(-90deg);
+}
+h1::after,
+h2::after {
+  right: -50px;
+  transform-origin: 0% 0%;
+  transform: rotateY(90deg);
+}
+
+a {
+  color: #000;
+}
+a:focus {
+  outline: none;
+}
+li::marker {
+  content: "◈  ";
+}
+li:hover::marker {
+  content: " ◈ ";
+}
+
+</style>
+
+</head>
+<body>
+
+<main>
+
+<header>
+  <img src="data:image/false;base64,/9j/4QAqRXhpZgAASUkqAAgAAAABAJiCAgAFAAAAGgAAAAAAAAAgICAgAAAAAP/sABFEdWNreQABAAQAAAA8AAD/7gAOQWRvYmUAZMAAAAAB/9sAhAAGBAQEBQQGBQUGCQYFBgkLCAYGCAsMCgoLCgoMEAwMDAwMDBAMDg8QDw4MExMUFBMTHBsbGxwfHx8fHx8fHx8fAQcHBw0MDRgQEBgaFREVGh8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx//wAARCAB4AHgDAREAAhEBAxEB/8QAfAAAAQUBAQEBAAAAAAAAAAAABAECAwYHBQgACQEBAAAAAAAAAAAAAAAAAAAAABAAAgEDAgMHAgIHBgcAAAAAAQIDABEEIQUxEgZBUWFxIhMHgRQyQpGhscFyIwjRYoKSUxXxUqJDcyQlEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwD0+KBaBwoFGlAnhQUH5N+Z+j+gMFWz5Tm7rML4m04zL7zjhzsT6Y49PxH6XoMK3v8ArL6ml5k2bYMLBDE2fKkfJdV7DZfaW4oOLjf1afKkXK0v+35QAsytilLnzV6C89M/1k7bLNFB1PsLYqubSZu3yGVE8fZkCtbyY0G+9PdS7D1HtibpsebFn4LmwmiN7MOKsOKt4GgPagheggeghc0EDmg74oHWoFFqB1qDAP6g/nTI2B5ukemuUb1NGRm50hIXHRx+FB2uV/RQeS8+Z8mcy5eTPmZkou87kte2gFzc2FAEyKqc5uAw4BbnyvQfK7W9IYRgXu2p49ooJ4Xhkja4ZCv57aE37hQWroH5C6m6C3Y7rsk14pDy5GI5vFKpAvzJw5rfha2lB7W+MfkjaPkDphd529Whlib2c7FcgtHMBc2sb8h/KTQWl6Ad6CF6AdzQWFaBwoFFqBmXkfb4eRkcfZjeS38Ck/uoPz2Mu49RdRZmZIxyMzccmSSWRtL87G1z3Be6gvW1/F+NGyMkwSVT6lcB1IOh0FB0c34YwXQSQnUABolQ2ve5Nz30GfdQdHZMGcycpiBJT7ddDy300NjQTbd8W73lYnuRwe3CLMDJ6Ln60AG/9FZ21YTZV1kSMckqC40PeD3dlqDQf6R9/wArA+RMjZPcK4m74khaEi4MsA50PgbXF6D129BA9BA9AM51oLCDQPBoFBoOL1xI6dFb+yGzDb8mxsTxiYcBQeLfjpMY7oosC/s+i/Z3keNBtm1bdHzxs1+YkEGgtkO3rG6garxt30DsnbsGVgZ4IpeX8JdFZgfAkXoANywsU4jIoAvw5dLUGV9eYcMWFlK45rxkt3EjUUFV+AAcP5j2GVALTNLFYm2kkTC48aD2jJ20A7mgHkNANIaCxCgcDQKKAPfcM5+xblgqvM2ViTwqveZI2UD9dB4m+LsGR8/ImvdMOMRu3fM5sV8lCUG27Pu+zvMMf72BHUAFncKARxsTppQXnD/2+aMGDNiyCuje26uAfNSaCWbFhYglwDwoK1vudsWMkn/08YSRgl4mmQMAPC96DMOpMzbN4MuPDMr3RkcKdQrDRh3igq3w1tec3y703gqLZeDmSNNpce1BGzMf8tB7JeRGHMjB0bVWUhgQe4jQ0A8hoBpGoBZDQWWgdegUGgzrrvq/qnbeqYNv2rIXHiWGKRInhEqzvIzXDk2a3o5fSRQYrtHTjQ7p1RjmJYI8vc3mWGEkoqOokKoSOblu5GtAdnZOUu2zjZulcTcFxCFkOYpkmKsD/Ngxk5S6KbA+rtva1B3tqhfaWwyv26PJDHLlw48XsrFKw9UNgWUlePGg7+/77D9jF7JI93RnfQC9BR98wNyxE27M2badu3afOlZc7GmxOYwsD6DJKWR1FtS+ooIczFOdKRJtkWDlYr+mXEJOO9uJjJCtY9oIoOFs2yOesNzeHIfGOTiKWWNijSCS6yqWHq5T7YuF48DpQegvizGlxugtuR9A7zyxJwCRvIeVQOwC2lBZJG40A0jUA0p40FnHGgW9AooKV8n4jLh4O7wpefFkMLONDyyC8dz/AOUAfWgzHF+zbPZsaVpTOA+Qz6SLMw/mI47CrDloLnt23Ron3DhStuGlyf7KCvb/ABY65CvYALcm2gB7BQczdcgvgwGUEwsdNNOFgTQWTppcaTEiWSMc6i1zxt59tBF1LhQQQPIjWLajwtQZzLNIzyRwQs2TzJbM5bLCt7kBhxduAUUHovY8N8DYduwZBaTHx40kB48xHMwP1agmkOlANIaAaQ9lBZw1A4GgUGgh3DAxdxwMjByl58fJQxyDtseBHiDqKDH+qOjs3p/KxsyT2mxJGON9zEbNIQpZGkQjRrKRxoOjgTs8QhY6NbzFBB1RtaCCGUKr+23MEY8oLkWXmNjp32FANvGTO+0NDJhwRRjkXJmAY3XtEaj1AnsJoDdk22ODbEIfmZACoBvyr2C/bQcTqnNLq3MbRoLt9KC0dB/H23QbTtu7bkJZc6dFy2xHIEKOzc8ZKgXay8psTQXmVySSTcnUmgFkNAPIaAaQjWgtAOlA69AvNQOBoON1fszb109lYUYByRyz4l/9aI8yj/Fqv1oMv2HIaRw1zdbtY8RbsPiDQC75vWXiZnty4kuU8hvDJcCIeHG4PnQQZvUG/nEcybXykqOZWdbWX66UE3SWXuOYk00uOcOOPRVEnMH77JbQUHO3QLmb9jbVI5ZMzKix3Qf8ruA3/TQbvIEQ8iCyJZEHcq6KP0CgHkagGduNAPI1ANIwtQWgNQKpIoHAigUNpQOiYe6n8Q/bQYN9w2Fm5eQhP27ZM4mI15CZW9X8J7aCwYyQ5huzggjRrAhu7jQSSbREgLyZA9nsTkAt9TQcbds3F2yCaTnHthbk/mJ7FFtb37BQcLphcjJ6y2XKyxyyzZ0RRG0KJq3q/vHtoN8mEi6spAbgTwNALI1AM70A0jUA0j0FqDUDg16B16Bk+Tj42O+TkzJj40esk8rCONfNmIFBm+8/O+wwZT4vT2LJu+RGCfvW/k4QKm2jH+ZJre3KtvGgrmxD7iF5HGuQzSuo4AuSxGvZrQJHt2448zLtcyRhWuIJwzRg8dCvqUeFARlx/IEsRijx8RCwv75d2UeS2vQVmXbcps+Jc7I+7yQdAByxoe0qvf2XNAJ1jiRPtcsLLdHHJIgJFx268aCpdM7/ANW9FbrLNsW6zHCyYVeTAymOTjFg+t0kOlwOI18aDZ+nfnLpjdPbx92hk2XLaymRz7uIz8CRIvqRf4x9aC9CaOWFZoZEmgf8E0bB0byZSQaCCR6Ad3oLWGoJE5mNlBJPADWgo3Wny7sOwc+Ht/Lu+8rcHHif/wBeFrf9+YXF/wC4lz5UGEdTdSdQdU5v3W85j5So14MZfRjx+EcQ9It3m7eNAPsqmKURXsHHst32J5lN/PjQar0/jmKJEYWKgD9FB158JlmEsenN+K3Gg+nyt3gwHxo4TM7C2PMCLJfv8qDi4W2iKd5ZzzyItrnvPGg5267ac6Ro7XAvfsAoM43NYGy5kxjzRJZVcDiF4nyJoApISotygqfzG/HgRpQdLYOod86flMm1ZrQH80P4oHHc8Tek/t8aDRtn+ZtumKw75hPhS8DlY15YfMxn+Yv0uKC6YO77ZukH3G25cWZFa5MTAkD+8v4l+ooGb18z9G7a7RYrTbtMo9X2oCRA9l5ZOUH/AAg0GW9VfKfVnUzyYyTf7ZtJ4YeGxXmt/qzaPJ5aDwoKm3IsYiiBCjjy6Gx/ZQO5QDya69vd5UEpS4VRoeCuAO3sNBcOnOulxCMPd4ndF0jy0ALhRp6h+cDvGtBftt3fadzjP2WbDMy9gcBv8rWa9BM8u4IhQPGFOgduz91BwN1z9s2uMPmZqB5bmysHdvJEvQUnqHrGbcIjgbbG2LhyaTSMR7stuwkfgTwHHtoK03oUgWFzqeFBGb2AYWY8VvYf8KAeS66iw7lvQMN78pJXy460BGBl5WDmxZmFK+LlxEFZY25SwGoB7we0HjQTTqz5PIp7BYkcdNbUD1VI0KX1sCfOgSKM2aQnlBPA6m3ePOgUIhsvMVAP1t40D2QA2Xidb37u80Ehla44craBbXF/G+lAxkHPblKjUAjsA76D4h2Xl91iPykMf2E0EKxqSwJKsbkk/wBgoJLMFC6aDQDsHfQKY4wqkjlJ4Hj+qghK8vAgN+o0H3tubOLaj8PhQRNApe7ce0mx08qD5VKuDykMCB38ONAdIVLAm/MR+rz8aBnIOW9uPDy7jQKoUgEDTtAPDu49lB8Lq/NoxHYNSfGgXg5Z7c35e7wNB9cEct/VqGF769p1oEAAsbAi59JNrj6XoGIvPr2Xsb6XoFJWxF9FJF79vZ6qBR7iKoKm1j3HQcaBWe8fpHKOJI7P7KBnJYcrWtoS2lrH99B8AQGJAv8AUeVjQfKLEXXQ20HG3d3UEcycrjlJBa/G9/LyoP/Z" width="120" height="120">
+</header>
+
+
+  <section>
+    <h1>Alexander F<span>u</span>tekov</h1>
+  
+    <p>Happniess fundamentalist and pragmatic extremist.</p>
+    <p>Father of two kids, both fans of deconstructivism and strict believers in anarchy.</p>
+  </section>
+
+  <section>
+  <h2>Web Dev</h2>
+  <p>I enjoy working with web languages, their dialects, and related technologies.</p>
+  <ul>
+    <li>Currently working as a Front-end Developer at <a href="https://www.progress.com/">Progress Software</a></li>
+    <li>I believe cars should be built like JS libraries - lightweight, as few depenndenciesa as possible, reliable, and under-engineered.</li>
+    <li>Built a pet project <a href="https://csspre.com/">about CSS preprocessors</a></li>
+    <li>Taught few web courses, talked at a UX conference once, sometimes would write about <a href="https://css-tricks.com/3d-button-parallax/">a wacky CSS idea</a></li>
+    <li>Has several relevant certificates, including an <abbr tabindex="0" title="Microsoft Certified Professional">MCP</abbr></li>
+
+  </ul>
+  </section>
+
+  <section>
+  <h2>Home Design</h2>
+
+    <h3>Media server and weather station</h3>
+    <cite>"The Bauhaus aimed to reunite fine art and functional design, creating physical objects with the soul of artworks."</cite>
+    <figure>
+      <img src="/img/server-v2.jpg" loading="lazy" />
+      <figcaption>
+        A Raspberry Pi media server with a weather station with a 16x16 color display, connected to a router. It can automatically download TV series &amp; subtitles for them. Notifications to any smartphone upon new downloads.</figcaption>
+    </figure>
+
+
+    <h3>TV, Audio and smart home hub</h3>
+    <figure>
+      <img src="/img/tv-v2.jpg" loading="lazy" />
+      <figcaption>IKEA Kallax solution that saves space and money. The black box holds a Logitech Z906 subwoofer and a hidden Apple TV (home hub). The two white IKEA decorative boxes are storage for toys.</figcaption>
+    </figure>
+    <p></p>
+
+    <h3>Hair Dryer Storage</h3>
+    <figure>
+      <img src="/img/hair-v1.jpg" loading="lazy" />
+      <figcaption>
+        What's easier:
+        <ul>
+          <li>Alwasy plugged in, cam still be connected elsewhere</li>
+          <li>Easy to grab and use, cord needs between max 1 unwrap to reach a comfortable position at the mirrot</li>
+          <li>Commonly-used accessories attached to door via magnets</li>
+          <li>All other accessories stored inside the same space-efficient compartment</li>
+        </ul>
+      </figcaption>
+    </figure>
+
+
+    <h3>Workstation/Desk</h3>
+    <p>WIP...</p>
+
+    <h3>Lego Wall</h3>
+    <p>WIP...</p>
+
+  </section>
+
+  <section>
+  <h2>Science Nerd</h2>
+    <p>Holds a BA from <a href="https://www.aubg.edu/" title="American University in Bulgaria">AUBG</a> &amp; MSc from <a href="http://www.ed.ac.uk/" title="University of Edinburgh">UoE</a>.</p>
+    <ul>
+      <li>Loves everything about the Scientific method and the great Carl Sagan</li>
+      <li>Fanatic about good experimental design and fan of Ben Goldacre</li>
+      <li>Detects cognitive biases &amp; fallacies (Daniel Kahneman &amp; Michael Shermer rule)</li>
+      <li>Studies life satisfaction</li>
+    </ul>
+  </section>
+
+
+<section>
+  <h2>Contacts</h2>
+  <a href="mailto:futekov@gmail.com">futekov@gmail.com</a>
+  <a href="https://github.com/futekov">GitHub</a>
+  <a href="https://www.facebook.com/alexander.futekov/">Facebook</a>
+</section>
+
+</main>
+
+</body>
+</html>
