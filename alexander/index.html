@@ -1,11 +1,9 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="description" content="A web developer and a Bulgarian optimist.">
-  <meta name="keywords" content="Александър Футеков, Футеков, Alexander Futekov, Futekov">
+  <meta name="description" content="Web developer, optimist, minimalist">
   <meta name="author" content="Alexander Futekov">
-  <meta name="viewport" content="width=device-width">
   <title>Alexander Futekov</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -20,8 +18,6 @@ html {
   height: 100%;
   overflow: hidden;
   background: #afafaf;
-  border-left: 3px solid #004b87;
-  border-right: 2px solid #ffcd00;
 }
 
 body {
@@ -34,16 +30,17 @@ body {
   transform-style: preserve-3d;
 }
 
-@media not (prefers-reduced-motion) {
+@media (prefers-reduced-motion: reduce) {
   body {
-    perspective: 80vh;
-    transform-style: preserve-3d;
+    perspective: none;
   }
 }
 
 main {
   position: relative;
   overflow: hidden;
+  border-left: 3px solid #004b87;
+  border-right: 2px solid #ffcd00;
 }
 
 main:before {
