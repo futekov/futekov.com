@@ -21,6 +21,7 @@ html {
 
 body {
   margin: 0;
+  padding: 25vh 5vw;
   height: 100%;
   overflow-y: scroll;
   font: 19px/1.4 sans-serif;
@@ -29,37 +30,28 @@ body {
   border-left: 3px solid #004b87;
   border-right: 2px solid #ffcd00;
   color: #e7e7e7;
-  background-color: #000;
+  background-color: #111;
+  scroll-behavior: smooth;
 }
 
 header, section {
   max-width: 56.5ch;
-  margin: 30px auto 20px;
+  margin: 0 auto 50px;
   padding: 0 1.5rem 1.5rem;
   transform-style: preserve-3d;
-  background: #171717;
-}
-
-section {
-  border: 2px solid #e7e7e7;
-}
-
-header {
-  background: none;
+  border: 2px solid currentColor;
+  background-color: rgba(128, 128, 128, 0.2);
 }
 
 header img {
-  display: block;
-  margin: 5px auto;
+  float: left;
+  margin-right: 1em;
+  margin-bottom: 1em;
 }
 
-section:last-of-type {
-  margin-bottom: 40vh;
-}
-section:last-of-type a {
+header a {
   display: block;
-  font-size: 1.2em;
-  text-align: center;
+  padding: 0 0 0.2em;
 }
 
 img {
@@ -72,9 +64,9 @@ h1, h2, h3 {
 
 h1, h2 {
   position: relative;
-  background: transparent;
+  background: inherit;
   border: solid;
-  border-width: 2px 0;
+  border-width: 2px;
   line-height: 2em;
   margin: -2px -1.5rem 0.4em;
   transform-style: preserve-3d;
@@ -112,29 +104,26 @@ h2::after {
   width: 50px;
   top: -2px;
   bottom: -2px;
-  background: transparent;
+  background: inherit;
   border-color: inherit;
   border-style: solid;
-  border-width: 2px;
+  border-width: 2px 0;
 }
 h1::before,
 h2::before {
-  left: -50px;
+  left: -52px;
   transform-origin: 100% 0%;
   transform: rotateY(-90deg);
 }
 h1::after,
 h2::after {
-  right: -50px;
+  right: -52px;
   transform-origin: 0% 0%;
   transform: rotateY(90deg);
 }
 
 a {
   color: inherit;
-}
-a:focus {
-  outline: none;
 }
 li {
   margin-bottom: 1em;
@@ -145,40 +134,51 @@ li::marker {
 li:hover::marker {
   content: " ◈ ";
 }
-</style>
 
+@media (prefers-color-scheme: light) {
+  body {
+    color: #181818;
+    background-color: #eee;
+  }
+  h1, h2 {
+    color: #000;
+  }
+}
+
+</style>
 </head>
+
 <body>
 
+  <header>
+    <h1 translate="no">Alexander F<span>u</span>tekov</h1>
 
-<header>
-  <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/4gIoSUNDX1BST0ZJTEUAAQEAAAIYAAAAAAIQAABtbnRyUkdCIFhZWiAAAAAAAAAAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAAHRyWFlaAAABZAAAABRnWFlaAAABeAAAABRiWFlaAAABjAAAABRyVFJDAAABoAAAAChnVFJDAAABoAAAAChiVFJDAAABoAAAACh3dHB0AAAByAAAABRjcHJ0AAAB3AAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAFgAAAAcAHMAUgBHAEIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFhZWiAAAAAAAABvogAAOPUAAAOQWFlaIAAAAAAAAGKZAAC3hQAAGNpYWVogAAAAAAAAJKAAAA+EAAC2z3BhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABYWVogAAAAAAAA9tYAAQAAAADTLW1sdWMAAAAAAAAAAQAAAAxlblVTAAAAIAAAABwARwBvAG8AZwBsAGUAIABJAG4AYwAuACAAMgAwADEANv/bAEMACgcHCAcGCggICAsKCgsOGBAODQ0OHRUWERgjHyUkIh8iISYrNy8mKTQpISIwQTE0OTs+Pj4lLkRJQzxINz0+O//bAEMBCgsLDg0OHBAQHDsoIig7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7O//AABEIAKAAoAMBIgACEQEDEQH/xAAbAAACAwEBAQAAAAAAAAAAAAABAgMEBQAGB//EADcQAAEDAwMDAgMGBAcBAAAAAAEAAhEDBCESMUEFUWETIgZxgRQyQpGhwRUjUtEWJDNDYrHx4f/EABQBAQAAAAAAAAAAAAAAAAAAAAD/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwDgYRJ8wgQZQE6oQMCQjmUAnHdANIcAEnp1A4HXHcDlSjCPCBarwynJMKK2IAcROUa7dYjeELUYdCCRdnuoK17a0KmirXYx3ZzoUH8c6Zr0G8pEn/lsgvgCYJlRuBBIzHCahdW9wzVQqsqAGCWmcovjMIIgwNbgnJ7pgIXEyEvBOY7oGLoMEpZkY2Qw8YyDyla1tJoDRAJ5QShxjIQiYcZxwuAM5RhAHH3CSUwnWIPmFwEnbKdgkDhAhlcBAmU4G6BHtQc0YTAYSsnIKcbIOAKKIQzKBasBq8f1T4pNvW9Dp/vcMOfu1Xfi3rTrVgsbckVajZe7+keF4+3tbi4n0wY8IDVuKz5q1Hue8nkqq+rUL9Mq9cWFS2EPJJOcKqKJ1TGZmED215XtnNqUajmO7tPC9P034slzad60aT/uN4+YXnadhUcAdO6lqdIuqVq659J5pAZIGEH0NtRtWmHscHNIkEHdMGawDyvIfCt5Vp3wtHOJp1BhpOx8L2gEYQI1gbiIXEe4dk7iCICU9uyDjsh7tUFvt4Kfhc7aJQAbojfCEZj9US7RByZOEDFxEwMoCXDbKHMpmmNt0HD2nKaY7LondcBM90DAR9UDISO9QkBpg9yFLHO5QeC+I6JrfENTGwaP0XuumdHt7Lp9Km2m0nSC4kbmMrzHW6J/joOxc1pJXt6Dps6bu7QgzrmxoVPa+ixw8hZlx8M2dYS0em7gtC3qzS4youEGZ0/oFK0kGoagPDgFst6fbPtnW5Y3QWwQkbnlT0jBiUHzqjbfw74kpwcU6uj9l7IAlupec+IaL7TrL3RHqRUYe69E1xq0mvbs4AoOac7IGdJhOaZIjbyEdJHCCNoODGe3ZNpOqRhP6Tp2TCn7tkEWOQmNMkBw3mMKUUweMKQANGEFbhESiQEv4kEgHdLpzOcdkwb5Q+7OUDQS2Z+qLTjJykDyWwle5xpPFPD9J0nseEGF8Q0nHq1q9v8AugMBHfUP7r0fUL02FJlGhQdVeAAANgFm1benVt7G5qw2r6rH6ZiTqg4+S0+p2te4BFvVbSLsF5EwPCDBrdf6g0w+yawTuXq5a3tS4Zq0x8isK5+HzTvX1DVq3BcNIDswe8r03RemOsOnxUA1HMbwgxuqdVurd2hlZlHy4Sq9h1B9xWE9caXg/djStjq/RftVand0oD2GYPKh6b0W2oAtdZ0ocZIInKCfr9m6/wCj03uh1Wi8e4cg4P7KW3ovtmi3JltOk2Cdyc/2Wk+3ps6bUpkFrNBwOAs61p3DLYfaCdRJLdW8cIJKdQVASAYBjKmwYUTGEY+phSNEY7oOhzs6v0XAGQSdlK1vKD2SgAku/wCIRkao/VcGETyCVxA0yeEEE5Sk+6YRBQxrEmDwO6B5MSlaCQSUx2KDMsAKBfA3RAIOU0AHCDnZ+SCGtZVLisyvSGp1EH2nb/1bdNzK1u1wzqbIWQK9Sm4uYSCV1l1FtC19Ko7NN2mfHCCe5a2idRhT+uw2Ye5zWgjAJyVmdYv6VtRD6zoDth3WTc1ftIpVHCnSYBLXO+99EHoPttu6maRrtbUdOkHlVbO+aapY8Q4HZYVKpTpuBp3hLp/ANSkZ9s/iLKrmONJ0AOLYP/iD1N7cNdYVS3cMIhQvququ1OjsFQFd1WsaUyHOEAcAZlWwNQPdBKIH1TRJ8KIZcBwApaTg8YxCBmz33TkIiAcpSfcgjqVdDQCJ3XUCXUxMme6JZqJ1HE4CdrQ1oAQVSDO2ENMZdlSGNgcpCS4wBgcoAGh28onARJBMBKBBwICAgcpWgvcAnYBqPceEADugsOpsDdMBZF5a1PXeaALvb7mjcgdvK02Ev3Kita1J3UxSa6XZx9EGXpZeMoCu3XoIyRurl306gKM0qDR4DQk65a3FCp9pshOZfSH4j3Cyf8Vg0g2o7S7YtcNkFqxFSrcaDb1GgcuEBN12uWNphrw0MMmDCyq3xNSpgltQk5iEOmi567cipXaW2wdJB/Gf7IN3pNu5tr9sqMmpVHtHOlXWg6g4gg9uyF7f0umi39UEMqkt1AbHEKW3rUK0upVA/wCSDskOyBJ/RLbtcXnQYA38qVrdQgjKnDAzI3QdGEpILoBEjdNAJkoYkkRntygjc8sdpDCeSQpAdREBAwQUGu0xHCCAhsycwu0zMI7ulFoJQDYbJA0g+FKQDuJChr16VAfzHgeOUDsIM+6fkoK91RtxNR4B7crHvOvk6qduNLRPu3KyKt3UqUn1NRk4GZKDXvutPNJ5YCymwEmNz4nhSfBVf1rysXxqgkfIwf2XnQ4P6ZXBMlx5U3TrypYmjcUjpgBrozkcoPoV43ORhee6p0W0vDrfTEx94YP5rQo9aodQojIbUjLTt9Ej67WtOrZB5mj8PWjKphpeRwSvS2tJtHSxoAAAGOFVp1aYqktbk+E951CnYsDnw55+61BH8WXNNthTpfjB1/IBY7XPY9xY8g7jPdVL66feNfWqkk1MAeFZdAdG0tG4Qalh1usyBVAcJ3Jn9VuUb+jdEBrwHf0uwV4q1d/mHt0zIlWKbyQHD2kcoPaTOJQgEzOy83a9auaZ0uIqRwc4W7aXbLuiHiGu5bOyCWo8NHOeyMQfK6SY2nwmA/ETkIK4kjIhOzbOFGCcgiDwkuawp0TnJwEEF9fCkw0qZ9+xI4Xmbt1R1V2p7ntJ3dmVcuHh5LC4ief6T5WfVe4sfTeIe3cboIXZAG6GdJZHCkAwDyg0APgTJwgrUCTb1G8SpxTim5od8vmo7Vvuqs3E8KzgyUEdNz6bTJzwI2Kt2/xA+g3RXpGqO6rmQIAH0XH3AQDHKC874gYW/wAm1drO2oiFn1Klau91au6XE/dTxnb8lwbLsjA7oErUvaGyTBGIVup7YMGNIVeq2diP7KV5AY0NJgCPCCKiQL1vE4lNSJ0u3wcxwkP+qxwBJDt4TMfpq1gROJQTsfNXWdg3EHZXKF0+k8PaTI/IrOY+C7TDtuPKsU4kuJbKD1NpcC4pBwEHkdlY9xwsPpdc0q4ByHHSSt1zw0Nkx2ygrv2BAJKz+oVC3BdOkLTIMGFj37j6rwgyrmHtBnS4Y1cO+fZU/UNYkH21WgtcDyFPUfnS5gBjEbFUaryyu2pElvY/eHIQSt0lkSP7oOMVmQd9lXqVSxlZh3DdbfIUlNxNzJxpCA27S+pUgbnaFPHHE7qKgNLPcYJMmVKD238hAYOnAgcJRmRmOABK6cQB+QXYAkHffKA4AnaV0tPAOUuzZjz8kQTmHR2hAXCWnsi4y1smHRykGk+E3O+fkEB0TBbkTI8qNzmsc4jEsOFLIJAiTztuq9zim6HCdJmM8IJNYDHyZBcM7qX1QTue4WaLgnRIwBq+p2Vqk6NJnJ8Sg2LV5iXEzwF6UuDwwkSAJC8nb1HEgkSfK9Ra5tqXhg/6QSQ9x3gfJYPUXFld79OoaiDAyMr0NWv6PTnVXE6WEkx2AXl6tVzCWVMHhxP3v/qDOrkPzTMg8bqm50nTqjvlT3LPe6Mk/qqdSY0vae2QgguDqou7sY5vzCvMZppD+p5/RZdXWKoYT9/258rVp5Gx3gcoJWkkd8ZI2R3IBEDwla0j8OSuGQSDP0QHAb7V2fqhM7/9LgAHfXsgBMZB28ogl+QTKB7SUHOg9/qgkBAGkZnkroJ2k8JJbIIJyifIMIH2yBz2UNY+xw4g8onOxn5Kte1HMt3BkkvOlo7koK9s1zxOnGB+QhX6dJ8TqA/dRW9M02Np6Z0iCrbKZJiQPkCgs2zYcDM8Cf2XqLKsH0GMAPtYBPBXmaLA2CXEmczsF6WzP8imWjBGfmg//9k=" width="160" height="160">
-</header>
+    <img src="data:image/jpeg;base64,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 " width="160" height="160">
 
+    <a href="mailto:futekov@gmail.com">futekov@gmail.com</a>
+    <a href="https://github.com/futekov">GitHub</a>
+    <a href="https://www.facebook.com/alexander.futekov/">Facebook</a>
 
-  <section>
-    <h1>Alexander F<span>u</span>tekov</h1>
-  
     <p>Happniess fundamentalist and pragmatic extremist.</p>
     <p>Has 2 kids, both are fans of deconstructivism and strict believers in anarchy.</p>
+  </header>
+
+  <section>
+    <h2>Web Dev</h2>
+    <p>I enjoy working with web languages, their dialects, and related technologies.</p>
+    <ul>
+      <li>Currently working as a Front-end Developer at <a href="https://www.progress.com/">Progress Software</a></li>
+      <li>I believe cars should be built like JS libraries - lightweight, as few depenndenciesa as possible, reliable, and under-engineered.</li>
+      <li>Built a pet project <a href="https://csspre.com/">about CSS preprocessors</a></li>
+      <li>Taught few web courses, talked at a UX conference once, sometimes would write about <a href="https://css-tricks.com/3d-button-parallax/">a wacky CSS idea</a></li>
+      <li>Has several relevant certificates, including an <abbr title="Microsoft Certified Professional">MCP</abbr></li>
+      <li>Proposed the <a href="https://github.com/futekov/measure-element">&lt;m&gt;easure element</a></li>
+
+    </ul>
   </section>
 
   <section>
-  <h2>Web Dev</h2>
-  <p>I enjoy working with web languages, their dialects, and related technologies.</p>
-  <ul>
-    <li>Currently working as a Front-end Developer at <a href="https://www.progress.com/">Progress Software</a></li>
-    <li>I believe cars should be built like JS libraries - lightweight, as few depenndenciesa as possible, reliable, and under-engineered.</li>
-    <li>Built a pet project <a href="https://csspre.com/">about CSS preprocessors</a></li>
-    <li>Taught few web courses, talked at a UX conference once, sometimes would write about <a href="https://css-tricks.com/3d-button-parallax/">a wacky CSS idea</a></li>
-    <li>Has several relevant certificates, including an <abbr tabindex="0" title="Microsoft Certified Professional">MCP</abbr></li>
-
-  </ul>
-  </section>
-
-  <section>
-  <h2>Home Design</h2>
-
+    <h2>Home Design</h2>
     <p>Without a proper hobby, home improvements eventually became one. Some of the ideas I'm proud of:</p>
 
     <h3>Media server and weather station</h3>
@@ -196,6 +196,7 @@ li:hover::marker {
       <figcaption>IKEA Kallax solution that saves space and money. The black box holds a Logitech Z906 subwoofer and a hidden Apple TV (home hub). The two white IKEA decorative boxes are storage for toys.</figcaption>
     </figure>
     <p></p>
+
 
     <h3>Hair Dryer Storage</h3>
     <figure>
@@ -226,13 +227,24 @@ li:hover::marker {
       </figcaption>
     </figure>
 
+
     <h3>Lego Wall</h3>
-    <p>WIP...</p>
+    <figure>
+      <img src="img/lego-wall-v1.jpg" loading="lazy" />
+      <figcaption>
+        When children want their Lego organized by sets but also require:
+        <ul>
+          <li>Shelves for showcasing some mini figures</li>
+          <li>Baseplates, tires, and separation tools should be easily accessible</li>
+          <li>Smallest items to be organized by colors in transparent cups</li>
+        </ul>
+      </figcaption>
+    </figure>
 
   </section>
 
   <section>
-  <h2>Science Nerd</h2>
+    <h2>Science Nerd</h2>
     <p>Holds a BA from <a href="https://www.aubg.edu/" title="American University in Bulgaria">AUBG</a> &amp; MSc from <a href="http://www.ed.ac.uk/" title="University of Edinburgh">UoE</a>.</p>
     <ul>
       <li>Loves everything about the Scientific method and the great Carl Sagan</li>
@@ -241,15 +253,6 @@ li:hover::marker {
       <li>Studies life satisfaction</li>
     </ul>
   </section>
-
-
-<section>
-  <h2>Contacts</h2>
-  <a href="mailto:futekov@gmail.com">futekov@gmail.com</a>
-  <a href="https://github.com/futekov">GitHub</a>
-  <a href="https://www.facebook.com/alexander.futekov/">Facebook</a>
-</section>
-
 
 </body>
 </html>
